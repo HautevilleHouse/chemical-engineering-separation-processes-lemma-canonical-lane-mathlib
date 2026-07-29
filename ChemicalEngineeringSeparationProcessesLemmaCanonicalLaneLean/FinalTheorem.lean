@@ -1,0 +1,17 @@
+import canonicalLaneMathlib.AdmissibleClass
+import HautevilleHouse.ChemicalEngineeringSeparationProcessesLemmaCanonicalLaneLean.DistillationColumnDesign
+import HautevilleHouse.ChemicalEngineeringSeparationProcessesLemmaCanonicalLaneLean.McCabeThieleMethod
+import HautevilleHouse.ChemicalEngineeringSeparationProcessesLemmaCanonicalLaneLean.FenskeUnderwoodGilliland
+
+namespace HautevilleHouse
+namespace ChemicalEngineeringSeparationProcessesLemmaCanonicalLaneLean
+
+def ConstrainedSeparationProcessesClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_separation_processes_endgame (A : AdmissibleClass) :
+    ConstrainedSeparationProcessesClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end ChemicalEngineeringSeparationProcessesLemmaCanonicalLaneLean
+end HautevilleHouse
